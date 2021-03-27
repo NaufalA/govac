@@ -11,13 +11,13 @@ class Vaksin extends Migration
         $this->forge->addField([
             'id' => ['type' => 'int', 'autoincrement' => true],
             'nik' => ['type' => 'varchar', 'constraint' => 20],
-            'id_vaksinasi' => ['type' => 'int'],
+            'id_event' => ['type' => 'int'],
             'jenis' => ['type' => 'varchar', 'constraint' => 255],
             'desc' => ['type' => 'text'],
         ]);
         $this->forge->addPrimaryKey('id');
 	$this->forge->addForeignKey('nik', 'user', 'nik');
-	$this->forge->addForeignKey('id_vaksinasi', 'event_vaksinasi', 'id');
+	$this->forge->addForeignKey('id_event', 'event', 'id');
         $this->forge->addUniqueKey('nik');
         $this->forge->createTable('vaksin', true);
 	}

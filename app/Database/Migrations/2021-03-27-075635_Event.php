@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Eventvaksinasi extends Migration
+class Event extends Migration
 {
 	public function up()
   {
@@ -18,11 +18,11 @@ class Eventvaksinasi extends Migration
         ]);
         $this->forge->addPrimaryKey('id');
 				$this->forge->addForeignKey('id_faskes', 'faskes', 'id');
-        $this->forge->createTable('event_vaksinasi', true);
+        $this->forge->createTable('event', true);
 	}
 
 	public function down()
 	{
-        $this->forge->dropTable('event_vaksinasi', true, true);
+        $this->forge->dropTable('event', true, true);
 	}
 }
